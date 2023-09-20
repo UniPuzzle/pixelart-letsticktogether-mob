@@ -380,7 +380,37 @@
 
 
   </div>
-
+  <div id="confirmOverlay" class="ph-modal-overlay">
+    <div id="confirmBox" class="ph-modal-box">
+      <h1 class="ph-modal-title">Save Image</h1>
+      <div class="form-inp">
+        <div class="form-inp-text">
+          <span class="st_user_name">First Name</span> <span class="st_stars_field">*</span>
+        </div>
+        <div class="form-inp-input">
+          <input type="text" id="js_name_user" value="" placeholder="First name"
+            onkeypress="setTimeout( js_user_name, 400, '#js_name_user');"
+            onchange="setTimeout(  js_user_name, 400, '#js_name_user');" data-gtm-form-interact-field-id="1">
+        </div>
+        <div class="form-inp-text">
+          <span class="st_user_last_name">Last Name Initial</span> <span class="st_stars_field">*</span>
+        </div>
+        <div class="form-inp-input">
+          <input type="text" id="js_last_name_user" value="" placeholder="Initial only"
+            onkeypress="setTimeout( js_user_last_name, 400, '#js_last_name_user');"
+            onchange="setTimeout(  js_user_last_name, 400, '#js_last_name_user');" data-gtm-form-interact-field-id="2">
+        </div>
+      </div>
+      <p class="ph-modal-text">Are you
+        sure you would
+        like to submit this Image?</p>
+      <div id="confirmButtons" class="ph-modal-buttons">
+        <a href="#" id="modal_window_undefined" class="button-modal button undefined">Confirm</a>
+        <a href="#" id="modal_window_gray" class="button-modal button button-grey">Cancel
+          <a>
+      </div>
+    </div>
+  </div>
 
   <script src="./js.js"></script>
 
