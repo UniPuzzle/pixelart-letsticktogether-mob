@@ -236,7 +236,7 @@ h5 {
 }
 .ph-modal-box {
   background-color: #fff;
-  width: 85%;
+  width: 95%;
   position: fixed;
   height: max-content;
   /* height: 80dvh; */
@@ -253,6 +253,9 @@ h5 {
   padding: 8px;
   text-align: center;
 }
+.ph-modal-title-confirm {
+  font-size: 25px;
+}
 .ph-modal-text {
   font-family: "Lato", sans-serif;
   font-size: 16px;
@@ -262,6 +265,10 @@ h5 {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+}
+.ph-modal-text-confirm {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .ph-modal-buttons {
   padding: 32px 0;
@@ -300,4 +307,8 @@ h5 {
 
 .button-modal:first-child {
   margin-bottom: 15px;
+}
+.button-modal-cancel {
+  width: 50%;
+  margin-right: 15px;
 }
