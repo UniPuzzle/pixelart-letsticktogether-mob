@@ -8,6 +8,7 @@ const containerVer = document.querySelector(".dashboard-item-card__thumb");
 const elems = document.querySelectorAll(".pla-sq");
 const blockColors = document.querySelector(".block-colors");
 const colorElems = document.querySelectorAll(".colors-item");
+const clearBtm = document.querySelector(".button-clear");
 
 function resizeBlock() {
   if (containerHor) {
@@ -29,11 +30,11 @@ function resizeBlock() {
   if (blockColors) {
     newWidth = clientWidth - 30;
     console.log(newWidth);
-    // newHeight =
-    //   containerHor.clientWidth - (containerHor.clientWidth / 100) * 20;
+    newHeight =
+      containerHor.clientWidth - (containerHor.clientWidth / 100) * 20;
 
     containerHor.style.width = newWidth + "px";
-    // containerHor.style.height = newHeight + "px";
+    containerHor.style.height = newHeight + "px";
   }
 }
 
@@ -44,8 +45,6 @@ function resizeElems() {
       elem.clientHeight;
       newElemWidth = wrCard.clientWidth - (wrCard.clientWidth / 100) * 95;
       newElemHeight = wrCard.clientWidth - (wrCard.clientWidth / 100) * 95;
-      console.log(newElemWidth);
-      console.log(newElemHeight);
 
       elem.style.width = newElemWidth + "px";
       elem.style.height = newElemHeight + "px";
@@ -65,9 +64,6 @@ function resizeElems() {
 function resizeColorElems() {
   for (const colorElem of colorElems) {
     if (blockColors) {
-      colorElem.clientWidth;
-      colorElem.clientHeight;
-
       newElemWidth =
         blockColors.clientWidth - (blockColors.clientWidth / 100) * 91;
       newElemHeight =
@@ -75,14 +71,21 @@ function resizeColorElems() {
 
       colorElem.style.width = newElemWidth + "px";
       colorElem.style.height = newElemHeight + "px";
-      console.log(newElemWidth);
     }
   }
 }
 
+// ============
+function resizeIndentation() {
+  if (!containerHor) {
+    return;
+  }
+  blockColors.style.marginBottom = "15" + "px";
+  clearBtm.style.marginBottom = "15" + "px";
+}
+
 resizeElems();
-window.onresize = resizeElems;
 resizeColorElems();
-window.onresize = resizeColorElems;
+resizeIndentation();
 resizeBlock();
-window.onresize = resizeBlock;
+(window.onresize = resizeBlock), resizeColorElems, resizeElems;
