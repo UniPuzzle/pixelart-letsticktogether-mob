@@ -6,6 +6,8 @@ const containerHor = document.querySelector(
 );
 const containerVer = document.querySelector(".dashboard-item-card__thumb");
 const elems = document.querySelectorAll(".pla-sq");
+const blockColors = document.querySelector(".block-colors");
+const colorElems = document.querySelectorAll(".colors-item");
 
 function resizeBlock() {
   if (containerHor) {
@@ -23,6 +25,15 @@ function resizeBlock() {
 
     containerVer.style.width = newWidth + "px";
     containerVer.style.height = newHeight + "px";
+  }
+  if (blockColors) {
+    newWidth = clientWidth - 30;
+    console.log(newWidth);
+    // newHeight =
+    //   containerHor.clientWidth - (containerHor.clientWidth / 100) * 20;
+
+    containerHor.style.width = newWidth + "px";
+    // containerHor.style.height = newHeight + "px";
   }
 }
 
@@ -51,7 +62,27 @@ function resizeElems() {
   }
 }
 
+function resizeColorElems() {
+  for (const colorElem of colorElems) {
+    if (blockColors) {
+      colorElem.clientWidth;
+      colorElem.clientHeight;
+
+      newElemWidth =
+        blockColors.clientWidth - (blockColors.clientWidth / 100) * 91;
+      newElemHeight =
+        blockColors.clientWidth - (blockColors.clientWidth / 100) * 91;
+
+      colorElem.style.width = newElemWidth + "px";
+      colorElem.style.height = newElemHeight + "px";
+      console.log(newElemWidth);
+    }
+  }
+}
+
 resizeElems();
 window.onresize = resizeElems;
+resizeColorElems();
+window.onresize = resizeColorElems;
 resizeBlock();
 window.onresize = resizeBlock;
